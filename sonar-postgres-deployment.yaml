@@ -21,6 +21,8 @@ spec:
                   key: password
             - name: POSTGRES_USER
               value: sonar
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata              
           ports:
             - containerPort: 5432
               name: postgresport
@@ -32,3 +34,4 @@ spec:
         - name: data-disk
           persistentVolumeClaim:
             claimName: claim-postgres
+            
